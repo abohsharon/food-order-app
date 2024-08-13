@@ -1,0 +1,121 @@
+<div class="relative w-[100%] h-[10%] p-0 m-0 ">
+ 
+ 
+<div  class="block bg-custom-bg p-10 h-full max-w-[95vw]">
+
+<div class="lg:flex sm:block  w-full">
+    <app-products>  </app-products>
+
+       
+<div class="h-fit min-h-80 lg:min-w-80 md:min-w-75 sm:max-w-75 bg-white p-7 my-7 shadow rounded-lg md:w-1/3">
+  <h3 class="text-custom-red font-bold sm:text-2xl">Your Cart</h3>
+
+    @for(item of cartService.getItems(); track item.id){
+
+     
+    <div class="">
+    
+          <p class="sm:text-xl lg:text-l font-semibold pt-4
+          tracking-tight text-gray-900
+           dark:text-white ">
+           {{item.productName}}</p>
+            <p class="sm:text-xl lg:text-l font-semibold pt-4
+            tracking-tight text-gray-900
+             dark:text-white ">{{item.count}}</p>
+            <span class="text-md font-semibold lg:text-sm
+            tracking-tight text-orange-700
+             dark:text-white"> ${{item.count*item.price | number : '1.2-2'}}</span>
+ 
+        
+        
+      
+            
+        <div class=" bg-white float-end  ">
+            <button (click)="onDelete(item)"  class="float-start ">  
+              <img src="/assets/images/icon-remove-item.svg" alt="delete" srcset="" class=" rounded-xl p-1 border-custom-red border-2 float-end ">
+            </button>
+             
+
+            <!-- <button (click)="cartService.updateQty(item.id)" class=" border-red-400 border-2 p-2">
+              <img  src="/assets/images/icon-increment-quantity.svg" alt="increment"></button>
+            <button (click)="cartService.removeQty(item.id)" class=" border-red-400 border-2 p-2">
+              <img src="/assets/images/icon-decrement-quantity.svg" alt="decrement"></button>
+            -->
+         </div>
+    </div>
+
+    <hr class="my-2 font-thin text-orange-900 ">
+
+           <!-- Empty Cart -->
+                <!-- } 
+             @else if(items == 0){ -->
+       
+
+  
+       }
+
+
+       <div  *ngIf="cartService.getItems().length ==  0" class="w-[80%] min-w-50 ">
+        <img src="/assets/images/illustration-empty-cart.svg" alt="empty cart" srcset="" class="w-full ">
+        <p class="text-orange-900 inline">Your added items will appear here</p>
+      </div>
+
+
+       
+    <div  *ngIf="cartService.getItems().length !==  0" class="block">
+      <div class="flex justify-between py-4">
+        <p class="text-orange-900 sm:text-l">Order Total</p>
+        <span class="text-xl font-bold text-gray-900">${{cartService.getTotal() | number : '1.2-2'}}</span>
+      </div>
+      <div class="rounded-md bg-custom-bg p-5 m-4 text-gray-800 text-sm ">
+          <img src="/assets/images/icon-carbon-neutral.svg" alt="" class="inline pr-2"> 
+          <p class="inline">This is a <span class="font-bold">carbon-neutral</span> delivery</p>
+      </div>
+     <div>
+      <button class="w-2/3 font-medium px-18 py-2 ml-14 rounded-lg text-sm text-white bg-custom-red hover:bg-custom-red focus:ring-4 focus:outline-none focus:ring-custom-red text-center" (click)="confirmOrder()">
+        Confirm Order
+     </button>
+     </div>
+  </div>
+
+ 
+</div>
+
+</div>
+
+
+
+
+</div>
+<!-- Order Confirmation -->
+@if (orderSubmitted == true) {
+  
+  <!-- <div class="w-screen h-[100%] block place-content-center absolute  z-10 mx-auto ">
+
+    <h1 class="bg-red-300 w-[50%] h-[80%] text-blue-600 ">Confirmed</h1>
+
+  </div> -->
+  <div class="overscroll-none w-full h-[70%] grid place-content-center absolute pt-60 top-0 z-10 bg-[rgba(0,0,0,0.8)] " >
+    <div class=" bg-white w-[480px] h-[480px] ml-[30rem] mt-24 rounded-xl p-8 sm:absolute ">
+      <div class=" block">
+        <img src="/assets/images/icon-order-confirmed.svg" alt="check">
+        <h3 class="text-2xl text-orange-950 font-bold pt-3">Order Confirmed</h3>
+       <p class=" text-orange-800 text-xs">We hope you enjoy your food!</p>
+      </div>
+ 
+         
+    <div class="w-full p-6 h-32 mt-2 bg-custom-bg">
+ 
+      
+    </div>
+
+      <button class=" rounded-xl w-full text-sm text-white font-normal my-6 py-2 px-28 bg-custom-red hover:bg-custom-red focus:ring-4 focus:outline-none text-center" (click)="startNewOrder()">
+        Start New Order
+     </button>
+ 
+    </div>
+ 
+  </div> 
+ }
+
+</div> 

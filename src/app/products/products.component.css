@@ -1,0 +1,9 @@
+@media (min-width: 596px) {
+    #addToCart { 
+        position: absolute;
+        z-index: 1;
+        bottom: -28px;
+        right: 50px;
+    }
+}
+

@@ -1,0 +1,92 @@
+<!-- container -->
+
+<div class="block text-3xl text-black font-bold mx-auto px-6 py-3">
+  Desserts
+</div>
+<div class="mx-auto px-4 md:flex sm:block ">
+
+
+  <!-- products -->
+  <!-- <div *ngFor="let product of productsList" class="grid md:grid-cols-3 sm:grid-cols-1 max-w-full">
+     -->
+    <div  class="grid md:grid-cols-3 sm:grid-cols-1 max-w-full">
+     
+    @for(product of productsList; track product.id){
+
+    <div class=" col-span-1 m-2 hover:bg-custom-red border-[0.5px] border-transparent rounded-lg p-0.5 hover:border-custom-red">
+
+      <div class="w-70 h-full bg-white border
+        border-gray-200 rounded-lg shadow ">
+          <div class="relative  w-[100%] max-w-96">
+         
+              <img class=" w-full max-w-full m-15 p-8 rounded-xl" [src]="product.image" alt="product image" />
+             
+      
+            <div class="flex items-center w-25 absolute md:left-[8px] md:bottom-[-28px] md:w-72 sm:bottom-[-28px]" id="addToCart">
+            
+            <!-- <span class="text-3xl font-bold
+             text-gray-900 dark:text-white">
+             <span class="text-xl font-thin text-gray-700">Quantity: </span>
+              {{product.availableQty}}</span> -->
+                  @if (!addedToCart(product)){
+                    <button (click)="addToCart(product)" class="flex items-center text-sm rounded-3xl border-custom-red border bg-white hover:text-custom-red px-7 py-2.5 mb-10 mx-auto">
+                      <img src="/assets/images/icon-add-to-cart.svg" alt="Cart Icon">
+                      Add to Cart
+                    </button>
+                  }  @else {
+
+                    <button class="flex justify-between gap-8 items-center text-sm rounded-3xl 
+                    bg-custom-red px-7 py-2.5 mb-10 mx-auto ">
+                      <span (click)="decQty(product)" class=""><img src="/assets/images/icon-decrement-quantity.svg" alt="increment" class=""></span>
+                      <span class="text-white">{{product.quantity}}</span>
+                      <span (click)="incQty(product)" class=" text-white hover:text-custom-red ring-1 ring-white p-2 rounded-full"><img src="/assets/images/icon-increment-quantity.svg" alt="decrement"></span>
+                    </button>
+                    <!-- <div  href="#" class="flex justify-between text-white text-sm rounded-3xl bg-custom-red w-40
+                    hover:text-white max-h-12 focus:outline-custom-red font-medium  mx-20 mb-10 px-5 overflow-hidden">             
+                    <button (click)="decQty(product)" class="h-16 pb-4 pl-1 "><img src="/assets/images/icon-decrement-quantity.svg" alt=""></button>
+                     
+                      <button (click)="incQty(product)"  class="h-16 pb-4 pl-1  hover:text-custom-red"></button>
+                    </div> -->
+                  }
+              
+                 
+               
+               
+                 
+                
+                  
+          
+  
+               
+           <!-- <button (click)="cartService.updateQty(product.id)" class=" border-red p-2"><img  src="/src/assets/images/icon-increment-quantity.svg" alt="">+</button>
+             <button (click)="cartService.removeQty(product.id)" class=" border-red p-2"><img src="/src/assets/images/icon-decrement-quantity.svg" alt="">-</button>
+             -->
+          </div>
+     
+          </div>
+      
+       
+
+        <div class="px-5 pb-5">
+          <h3 class="text-sm font-thin opacity-55">
+            {{product.category}}
+          </h3>
+          <h3 class="text-gray-900 text-l font-bold
+                    dark:text-white">{{product.productName}}
+          </h3>
+          <p class="font-bold text-md text-custom-red pt-1 ">{{product.price | currency : 'USD' : 'symbol' : ''}}</p>
+
+        </div>
+      </div>
+    </div>
+
+
+    }
+
+  </div>
+
+
+
+
+
+</div>
