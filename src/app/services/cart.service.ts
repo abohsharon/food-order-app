@@ -39,6 +39,18 @@ export class CartService {
      },0)
   }
 
+
+  // totalCount(){  
+  //      return array_sum($this->session->data['items']);
+  // }
+totalCount(){
+  let totalC = 0;
+  this.items.forEach(item => {
+    totalC = totalC + item.count
+  })
+  return totalC
+}
+  
 //        first try
 
   // updateQty(id: number){

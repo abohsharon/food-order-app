@@ -15,7 +15,9 @@ export class CartComponent {
     
   cartService = inject(CartService);
 
+//  cartItemNumber: number = 0;
 
+ 
 
   onDelete(item: any){
     this.cartService.delete(item)

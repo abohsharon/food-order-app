@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 
 *,
 *::before,
@@ -7,11 +7,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
 }
 
-body {
+/* body {
     min-width: 30rem;
-  }
+  } */
 
 
   

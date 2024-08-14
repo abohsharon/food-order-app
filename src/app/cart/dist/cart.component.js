@@ -16,6 +16,7 @@ var CartComponent = /** @class */ (function () {
         this.cartService = core_1.inject(cart_service_1.CartService);
         this.orderSubmitted = false;
     }
+    //  cartItemNumber: number = 0;
     CartComponent.prototype.onDelete = function (item) {
         this.cartService["delete"](item);
     };
