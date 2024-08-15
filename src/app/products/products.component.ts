@@ -51,10 +51,13 @@ export class ProductsComponent {
 
    decQty(product:any){
     this.cartService.items = this.cartService.getItems().map((p) => {
-      if(product.productName === p.productName && product.quantity != 1){
+      if(product.productName === p.productName && product.quantity != 0){
         p.count--;
         product.quantity--;
-      }
+      } 
+        // else if (product.productName === p.productName && product.quantity == 0)  { 
+        //   this.cartService.items.splice(product, 1);
+        //   }
       return p
     })   
 }

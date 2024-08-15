@@ -10,13 +10,13 @@ exports.CartComponent = void 0;
 var core_1 = require("@angular/core");
 var products_component_1 = require("../products/products.component");
 var cart_service_1 = require("../services/cart.service");
+// import { pipe } from 'rxjs';
 var common_1 = require("@angular/common");
 var CartComponent = /** @class */ (function () {
     function CartComponent() {
         this.cartService = core_1.inject(cart_service_1.CartService);
         this.orderSubmitted = false;
     }
-    //  cartItemNumber: number = 0;
     CartComponent.prototype.onDelete = function (item) {
         this.cartService["delete"](item);
     };

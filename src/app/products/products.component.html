@@ -20,23 +20,25 @@
               <img class=" w-full border-[3px] border-transparent hover:border-custom-red rounded-md" [src]="product.image" alt="product image" />
              
       
-            <div class="flex items-center w-25 " id="addToCart">
+            <div class="flex items-center w-25 absolute lg:right-12 lg:bottom-[-10px] md:right-2 xs:right-10 xs:bottom-[-15px] " id="addToCart">
             
             <!-- <span class="text-3xl font-bold
              text-gray-900 dark:text-white">
              <span class="text-xl font-thin text-gray-700">Quantity: </span>
               {{product.availableQty}}</span> -->
                   @if (!addedToCart(product)){
-                    <button (click)="addToCart(product)" class="flex items-center text-sm font-semibold rounded-3xl border-custom-red border bg-white hover:text-custom-red px-8 py-2 ">
+                    <button (click)="addToCart(product)" class="flex items-center text-sm font-semibold rounded-3xl border-custom-red border bg-white hover:text-custom-red px-8 py-2.5 ">
                       <img src="/assets/images/icon-add-to-cart.svg" alt="Cart Icon" class="pr-1">
                       Add to Cart
                     </button>
                   }  @else {
 
-                    <button class="flex justify-between gap-8 items-center text-sm rounded-3xl bg-custom-red px-7 md:px-5 py-2.5 mb-4 mx-auto md:mr-[] sm:mr-[118px] xs:mt-[-22px] ">
-                      <span (click)="decQty(product)" class="text-white hover:text-custom-red ring-1 ring-white p-2 rounded-full"><img src="/assets/images/icon-decrement-quantity.svg" alt="increment"></span>
+                    <button class="flex justify-between gap-8 items-center text-sm rounded-3xl bg-custom-red px-8 py-2.5 ">
+                      <span *ngIf="product.quantity > 1" (click)="decQty(product)" class="text-white hover:text-custom-red ring-1 ring-white p-2 rounded-full"><img src="/assets/images/icon-decrement-quantity.svg" alt="increment"></span>
+                      <span *ngIf="product.quantity == 1" (click)="cartService.delete($index)" class="text-white hover:text-custom-red ring-1 ring-white p-2 rounded-full"><img src="/assets/images/icon-decrement-quantity.svg" alt="increment"></span>
+                      
                       <span class="text-white">{{product.quantity}}</span>
-                      <span (click)="incQty(product)" class=" text-white hover:text-custom-red ring-1 ring-white p-2 rounded-full"><img src="/assets/images/icon-increment-quantity.svg" alt="decrement"></span>
+                      <span  (click)="incQty(product)" class=" text-white hover:text-custom-red ring-1 ring-white p-2 rounded-full"><img src="/assets/images/icon-increment-quantity.svg" alt="decrement"></span>
                     </button>
                     <!-- <div  href="#" class="flex justify-between text-white text-sm rounded-3xl bg-custom-red w-40
                     hover:text-white max-h-12 focus:outline-custom-red font-medium  mx-20 mb-10 px-5 overflow-hidden">             

@@ -1,4 +1,4 @@
-<div class="relative p-0 bg-custom-bg">
+<div class="relative p-3 bg-custom-bg">
  
  
 
@@ -55,7 +55,7 @@
        }
 
 
-       <div  *ngIf="cartService.getItems().length ==  0" class="w-[80%] min-w-50 ">
+       <div  *ngIf="cartService.getItems().length ==  0" class=" ">
         <img src="/assets/images/illustration-empty-cart.svg" alt="empty cart" srcset="" class="w-full ">
         <p class="text-orange-900 inline">Your added items will appear here</p>
       </div>
@@ -72,7 +72,7 @@
           <p class="inline">This is a <span class="font-bold">carbon-neutral</span> delivery</p>
       </div>
      <div>
-      <button class="w-2/3 font-medium px-18 py-2 ml-14 rounded-lg text-sm text-white bg-custom-red hover:bg-custom-red focus:ring-4 focus:outline-none focus:ring-custom-red text-center" (click)="confirmOrder()">
+      <button class="w-full font-medium px-18 py-2  rounded-2xl text-sm text-white bg-custom-red hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-custom-red text-center" (click)="confirmOrder()">
         Confirm Order
      </button>
      </div>
@@ -95,8 +95,8 @@
 
   </div> -->
 
-  <div class="overscroll-none w-full max-w-[100%] max-h-[100%] lg:h-[100vh] absolute xs:h-[80vh] xs:w-[100vw] grid place-content-center  xs:bottom-0 pt-60 top-0 z-10 bg-[rgba(0,0,0,0.8)] " >
-    <div class=" bg-white w-[480px] h-[480px] ml-[30rem] mt-24 rounded-xl p-8 sm:absolute ">
+  <div class="overflow-y-clip w-full max-w-screen max-h-[100% ] lg:h-[100vh] absolute xs:h-[100%] xs:w-[100vw]  xs:bottom-0 pt-60 top-0 z-10 bg-[rgba(0,0,0,0.8)]  " >
+    <div class=" bg-white lg:w-[30%] lg:h-[90%] xs:h-full md:h-[60%] md:w-[55%] md:mx-auto rounded-xl p-8 mb-10">
       <div class=" block">
         <img src="/assets/images/icon-order-confirmed.svg" alt="check">
         <h3 class="text-2xl text-orange-950 font-bold pt-3">Order Confirmed</h3>
@@ -105,13 +105,14 @@
  
          
     <div class="w-full p-6 h-32 mt-2 bg-custom-bg">
- 
+        <!-- <p>{{cartService.items| json}}</p> -->
       
     </div>
-
-      <button class=" rounded-xl w-full text-sm text-white font-normal my-6 py-2 px-28 bg-custom-red hover:bg-custom-red focus:ring-4 focus:outline-none text-center" (click)="startNewOrder()">
+   
+      <button class="rounded-xl w-full text-sm text-white text-center my-6 py-2 bg-custom-red hover:bg-orange-900 focus:outline-none" (click)="startNewOrder()">
         Start New Order
-     </button>
+      </button>
+    
  
     </div>
  
