@@ -30,6 +30,7 @@ confirmOrder(){
 startNewOrder(){
   this.orderSubmitted = false;
   this.cartService.getItems().length = 0;
+  window.location.reload();
 }
 emptyCart(){
   this.cartService.items.length = 0;

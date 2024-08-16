@@ -50,7 +50,16 @@ totalCount(){
   })
   return totalC
 }
-  
+
+// confirmationMessage(){
+//   // this.items.forEach(item => {
+//   //  return item.productName
+//   // })
+//   const result = this.items.toString();
+//   return result;
+// }
+
+
 //        first try
 
   // updateQty(id: number){

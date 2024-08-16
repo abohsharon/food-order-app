@@ -26,6 +26,7 @@ var CartComponent = /** @class */ (function () {
     CartComponent.prototype.startNewOrder = function () {
         this.orderSubmitted = false;
         this.cartService.getItems().length = 0;
+        window.location.reload();
     };
     CartComponent.prototype.emptyCart = function () {
         this.cartService.items.length = 0;
