@@ -33,27 +33,18 @@
             <button (click)="onDelete(item)"  class=" ">  
               <img src="/assets/images/icon-remove-item.svg" alt="delete" srcset="" class=" rounded-xl p-1 border-custom-red border-2 float-end ">
             </button>
-             
-
-            <!-- <button (click)="cartService.updateQty(item.id)" class=" border-red-400 border-2 p-2">
-              <img  src="/assets/images/icon-increment-quantity.svg" alt="increment"></button>
-            <button (click)="cartService.removeQty(item.id)" class=" border-red-400 border-2 p-2">
-              <img src="/assets/images/icon-decrement-quantity.svg" alt="decrement"></button>
-            -->
+      
          </div>
         </div>
     </div>
 
     <hr class="my-2 font-thin text-orange-900 ">
 
-           <!-- Empty Cart -->
-                <!-- } 
-             @else if(items == 0){ -->
-       
-
-  
        }
 
+      <!-- Empty Cart -->
+                <!-- } 
+             @else if(items == 0){ -->
 
        <div  *ngIf="cartService.getItems().length ==  0" class=" ">
         <img src="/assets/images/illustration-empty-cart.svg" alt="empty cart" srcset="" class="w-full ">
@@ -95,8 +86,8 @@
 
   </div> -->
 
-  <div class="overflow-y-clip w-full max-w-screen max-h-[100% ] lg:h-[100vh] absolute xs:h-[100%] xs:w-[100vw] lg:top-0 md:top-0 sm:top-0 xs:top-[205rem] pt-60 top-0 z-10 bg-[rgba(0,0,0,0.8)]  " >
-    <div class=" bg-white lg:w-[30%] lg:h-[90%] xs:h-full md:h-[60%] md:w-[55%] md:mx-auto rounded-xl p-8 mb-10">
+  <div class="overflow-y-clip w-full max-w-screen max-h-[100% ] lg:h-[100vh] absolute xs:h-[100%] xs:w-[100vw] lg:top-0 md:top-0 sm:top-0 xs:top-[198.5rem] pt-60 top-0 z-10 bg-[rgba(0,0,0,0.4)]  " >
+    <div class=" bg-white lg:w-[30%] lg:h-[85%] xs:h-full md:h-[60%] md:w-[55%] md:mx-auto rounded-xl p-8 mb-10">
       <div class=" block">
         <img src="/assets/images/icon-order-confirmed.svg" alt="check">
         <h3 class="text-2xl text-orange-950 font-bold pt-3">Order Confirmed</h3>
